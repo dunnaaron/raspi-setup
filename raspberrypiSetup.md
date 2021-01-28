@@ -1,0 +1,21 @@
+## How to set up RaspberryPi and SSH
+- Download desired img file (Raspian Lite is a good headless OS)
+- Plug in MicroSD card to card reader
+- Find the name of the MicroSD card
+  - `diskutil list`
+- Unmount the MicroSD card
+  - `diskutil unmountDisk <disk name>`
+- Write img to MicroSD card (You may have to install `pv` from homebrew if you don't have it, it just shows your write progress)
+  - `pv <img file path> | sudo dd bs=1m of=<disk name>`
+- Create your WPA Supplicant config file (find example alongside this README)
+  - `vim /Volumes/boot/wpa_supplicant.conf`
+- Add ssh file to activate ssh on the pi
+  - `touch /Volumes/boot/ssh`
+- Unmount the MicroSD card
+  - `diskutil unmountDisk <disk name>`
+- Plug MicroSD card into RaspberryPi and let it run for a few minutes. It will take some time to get the image mounted
+- From computer, ping the pi to determine if it is connected to the local network
+  - `ping raspberrypi.local`
+- If successful, ssh into the pi
+  - `ssh pi@<ip provided from ping>`
+- The default ssh password is `raspberry`
