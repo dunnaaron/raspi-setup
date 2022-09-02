@@ -1,4 +1,37 @@
 ## How to set up RaspberryPi and SSH
+
+### ***UPDATED***
+- Download the Raspberry Pi Imager
+- Open Raspberry Pi imager and choose an OS. When choosing your OS, select `Raspberry Pi OS (other)`
+- Select the OS you'd like to install (for headless, select Raspberry Pi OS Lite
+- Click the Settings button in the bottom right of the Raspberry Pi Imager
+- Check the `Enable SSH` box
+- Check the `Set username and password` box and enter a username and password you'd like to use for SSH-ing into your raspberry pi
+- You may configure Wi-Fi here as well but it is disabled by default if you want to just use ethernet
+- Click `Save`
+- Insert your micro SD card into the card reader and select that micro SD card as the storage in the Raspberry Pi Imager
+- Click `Write`
+- When it completes writing the image to the micro SD card, it will automatically eject the SD card
+- Remove and reinsert the SD card into the reader
+- You should see it labeled as `boot` in the Finder/File Explorer
+- Add an extensionless file called `ssh` onto the SD card. Example: `touch /Volumes/boot/ssh`
+- Eject the SD card and insert it into the Raspberry Pi SD card slot
+- Plug the RP into the ethernet cable connected to the router, then plug in the RP power supply
+- After a few minutes, the RP should be powered up and running.
+- Go into your router settings and set a static IP address for the RP (different for every router)
+- Open the terminal on your computer and enter `ping raspberrypi.local`. You should see that it is connected to the network. Cancel that connection once you've confirmed `ctrl-C`
+- Get the SSH key for the RP by entering `ssh-keyscan -t rsa <your RP's IP address>`
+- Copy that SSH key and add it to the end of your known_hosts file with the rest of your SSH keys
+- Enter `ssh-keygen -R <your RP's IP address>` (tbh not sure what this does, something with SSH permissions)
+- Now you can SSH into the RP with the credentials you set in the Raspberry Pi Imager by entering `ssh <RP username>@<RP IP>`
+- It will then prompt you for the password that you set up on your RP, enter that now
+- You're now SSH'd into your RP
+
+
+
+
+----------------------------------
+
 - Download desired img file (Raspian Lite is a good headless OS)
 - Plug in MicroSD card to card reader
 - Find the name of the MicroSD card
