@@ -26,11 +26,14 @@
 - Now you can SSH into the RP with the credentials you set in the Raspberry Pi Imager by entering `ssh <RP username>@<RP IP>`
 - It will then prompt you for the password that you set up on your RP, enter that now
 - You're now SSH'd into your RP
+- To update the Raspberry Pi, run `sudo apt update`
+- Run `sudo apt upgrade -y` 
 
 
 
 
 ----------------------------------
+### Outdated
 
 - Download desired img file (Raspian Lite is a good headless OS)
 - Plug in MicroSD card to card reader
@@ -53,7 +56,11 @@
   - `ssh pi@<ip provided from ping>`
 - The default ssh password is `raspberry`
 
-## This section was stolen from LinusTechTips
+-------------------------------------------------
+
+### This section was stolen from LinusTechTips
+
+Instructions on 
 https://linustechtips.com/topic/1094810-pi-hole-setup-tutorial/
 
  Stage 1 - OS Install/Setup:
