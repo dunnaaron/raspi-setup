@@ -19,6 +19,7 @@
 - Plug the RP into the ethernet cable connected to the router, then plug in the RP power supply
 - After a few minutes, the RP should be powered up and running.
 - Go into your router settings and set a static IP address for the RP (different for every router)
+  - *Troubleshooting* if your Pi doesn't show up as an attached device to your router, make sure the power supply for the Pi is sufficient
 - Open the terminal on your computer and enter `ping raspberrypi.local`. You should see that it is connected to the network. Cancel that connection once you've confirmed `ctrl-C`
 - Get the SSH key for the RP by entering `ssh-keyscan -t rsa <your RP's IP address>`
 - Copy that SSH key and add it to the end of your known_hosts file with the rest of your SSH keys
